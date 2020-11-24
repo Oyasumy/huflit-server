@@ -59,6 +59,10 @@ const checkXss = (source) => {
   if (Object.keys(source).length > Object.keys(html).length) return false;
   return true;
 };
+
+app.get("/",(req,res)=>{
+  return res.json({msg:"halo"})
+})
 // Get Data Home
 app.post("/getApiHome", createRequestLimiter, async function (req, res) {
   try {
