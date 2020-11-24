@@ -348,7 +348,7 @@ app.listen(PORT, () => console.log("sever is listening ..."));
 
 const getApi = async (user, pass) => {
   try {
-    
+
     const browser = await puppeteer.launch({
       headless:false,
       args: [
@@ -357,6 +357,7 @@ const getApi = async (user, pass) => {
       ],
     });
     const page = await browser.newPage();
+    
     await preparePageForTests(page);
     // await browser.close();
     await page.setDefaultNavigationTimeout(0);
