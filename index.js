@@ -357,7 +357,6 @@ const getApi = async (user, pass) => {
       ],
     });
     const page = await browser.newPage();
-    
     await preparePageForTests(page);
     // await browser.close();
     await page.setDefaultNavigationTimeout(0);
