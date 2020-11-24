@@ -60,9 +60,9 @@ const checkXss = (source) => {
   return true;
 };
 
-app.get("/",(req,res)=>{
-  return res.json({msg:"halo"})
-})
+app.get("/", (req, res) => {
+  return res.json({ msg: "halo" });
+});
 // Get Data Home
 app.post("/getApiHome", createRequestLimiter, async function (req, res) {
   try {
@@ -101,12 +101,11 @@ app.get("/getApiInformation", createRequestLimiter, async function (req, res) {
     var cookie = req.headers.cookie;
     console.log("--------------------------------");
 
-  
     if (cookie === "undefined" || cookie === "null" || !cookie) {
       console.log("fail");
       return res.status(400).send({ mess: "failed" });
     }
-    
+
     console.log("req", cookie, req.url);
 
     const childProcess = fork("./Api/apiInformation");
@@ -344,7 +343,8 @@ app.get("/getlast", createRequestLimiter, async (req, res) => {
   }
 });
 
-app.listen(3104, () => console.log("sever is listening ..."));
+const PORT = process.env.PORT || 3104;
+app.listen(PORT, () => console.log("sever is listening ..."));
 
 const getApi = async (user, pass) => {
   try {
