@@ -348,7 +348,9 @@ app.listen(PORT, () => console.log("sever is listening ..."));
 
 const getApi = async (user, pass) => {
   try {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    });
     const page = await browser.newPage();
     await preparePageForTests(page);
     // await browser.close();
