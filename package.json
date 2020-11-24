@@ -2,10 +2,11 @@
   "name": "api",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "startDev": "nodemon index"
+    "startDev": "nodemon index",
+    "start": "node index"
   },
   "keywords": [],
   "author": "",
